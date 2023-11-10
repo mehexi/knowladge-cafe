@@ -1,11 +1,12 @@
 .blog{
     width: 100%;
+    padding: 20px 0px;
 }
 
 .post-details{
     display: flex;
     justify-content: space-between ;
-    margin:15px 30px;
+    margin:15px 0px;
 }
 
 .img{
@@ -35,9 +36,22 @@
 .reading-details>p{
     font-size: 20px;
     color: rgba(17, 17, 17, 0.60);
+    padding: 0;
+    margin: 0;
 
 }
 .no-padding{
     padding: 0;
     margin: 0;
+}
+
+h1{
+    max-width: 900px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mark{
+    color: blue;
+    
 }

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 
 const Blog = (props) => {
-  console.log(props.blog);
+//   console.log(props.blog);
   const {
     id,
     cover,
@@ -13,10 +13,11 @@ const Blog = (props) => {
     author_img,
     author,
     posted_date,
-    hastag,
+    hashtags,
     posted_data,
     reading_time,
-  } = props.blog;
+    } = props.blog;
+    // console.log(hashtags)
   return (
     <div className="blog">
       <img className="img" src={cover} alt={`cover of ${title}`} />
@@ -34,7 +35,13 @@ const Blog = (props) => {
             <FontAwesomeIcon icon={faBookmark}></FontAwesomeIcon>
           </span>
         </div>
-      </div>
+          </div>
+          <h1>{title}</h1>
+          <div className="reading-details">
+              <p>#{hashtags[0]}</p>
+              <p>#{hashtags[1]}</p>
+          </div>
+          <p className="mark"> <b>Mark as Read</b></p>
     </div>
   );
 };
