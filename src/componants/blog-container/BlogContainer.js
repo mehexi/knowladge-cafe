@@ -5,6 +5,7 @@ import Blog from "../blog/blog";
 
 const BlogContainer = () => {
   const [blogs, setBlog] = useState([]);
+
   useEffect(() => {
     fetch("bolgs.json")
       .then((res) => res.json())
@@ -18,20 +19,28 @@ const BlogContainer = () => {
     setReadingTime(newReadingTime);
   };
 
-  // const addToBookmark = blog => {
-  //     const newBookmark = [...bookmarks,blog]
-  // }
-
+    const [bookmarks, setBookmark] = useState([])
+    
+    const addToBookmark =  props =>{
+        const newBookmark = [...bookmarks, props]
+        setBookmark(newBookmark)
+    }
+    
   return (
     <div className="blogContainer">
       <div className="Blogs">
-        <h1>h1{blogs.length}</h1>
+        {/* <h1>h1{blogs.length}</h1> */}
         {blogs.map((blog) => (
           <Blog blog={blog} key={blog.id} markAsRead={markAsRead}></Blog>
         ))}
       </div>
       <div className="bookmarkSection">
-        <h1>reading: {readingTime}</h1>
+              <h1>Sepnt time on Reading: {readingTime}</h1>
+              <div>
+                  {
+                      bookmarks.map(bookmark=><bookmark title={blogs.title} ></bookmark>)
+                  }
+              </div>
       </div>
     </div>
   );
