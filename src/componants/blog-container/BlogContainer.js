@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import Bookmark from "../bookmark/Bookmark";
 import "./BlogContainer.css";
 import Blog from "../blog/blog";
 
@@ -21,8 +22,8 @@ const BlogContainer = () => {
 
     const [bookmarks, setBookmark] = useState([])
     
-    const addToBookmark =  props =>{
-        const newBookmark = [...bookmarks, props]
+    const addToBookmark =  title =>{
+        const newBookmark = [...bookmarks, title]
         setBookmark(newBookmark)
     }
     
@@ -31,14 +32,15 @@ const BlogContainer = () => {
       <div className="Blogs">
         {/* <h1>h1{blogs.length}</h1> */}
         {blogs.map((blog) => (
-          <Blog blog={blog} key={blog.id} markAsRead={markAsRead}></Blog>
+          <Blog blog={blog} key={blog.id} markAsRead={markAsRead} addToBookmark={addToBookmark}></Blog>
         ))}
       </div>
       <div className="bookmarkSection">
               <h1>Sepnt time on Reading: {readingTime}</h1>
-              <div>
+              <div className="bookmarkContainer">
+                  <h1>bookmarked Blogs: {bookmarks.length}</h1>
                   {
-                      bookmarks.map(bookmark=><bookmark title={blogs.title} ></bookmark>)
+                      bookmarks.map(bookmark=><Bookmark key={Math.random()} title={blogs.title} bookmark={bookmark}></Bookmark>)
                   }
               </div>
       </div>

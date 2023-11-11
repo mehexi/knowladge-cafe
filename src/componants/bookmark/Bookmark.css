@@ -1,0 +1,11 @@
+.bookmark{
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.bookmark>h1{
+    font-size: 18px;
+    font-weight: 500;
+}

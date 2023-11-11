@@ -53,5 +53,6 @@ h1{
 
 .mark{
     color: blue;
+    cursor: pointer;
     
 }

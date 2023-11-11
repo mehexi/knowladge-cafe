@@ -19,6 +19,7 @@ const Blog = (props) => {
     } = props.blog;
     
     const markAsRead = props.markAsRead
+    const addToBookmark = props.addToBookmark
 
   return (
     <div className="blog">
@@ -33,7 +34,7 @@ const Blog = (props) => {
         </div>
         <div className="reading-details">
           <p>{reading_time} min read</p>
-          <span>
+          <span onClick={()=> addToBookmark(title)}>
             <FontAwesomeIcon icon={faBookmark}></FontAwesomeIcon>
           </span>
         </div>

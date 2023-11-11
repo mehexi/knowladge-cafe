@@ -11,6 +11,18 @@
     font-weight: 700;
     font-size: 24px;
     padding: 21px;
-    border: solid blue;
+    border: solid #6047EC;
     border-radius: 10px;
+    background-color: rgba(96, 71, 236, 0.10);
+    color: #6047EC;
+}
+
+.bookmarkContainer{
+    background-color: rgba(17, 17, 17, 0.05);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.bookmarkContainer>h1{
+    font-size: 24px;
 }
