@@ -17,7 +17,9 @@ const Blog = (props) => {
     posted_data,
     reading_time,
     } = props.blog;
-    // console.log(hashtags)
+    
+    const markAsRead = props.markAsRead
+
   return (
     <div className="blog">
       <img className="img" src={cover} alt={`cover of ${title}`} />
@@ -41,7 +43,7 @@ const Blog = (props) => {
               <p>#{hashtags[0]}</p>
               <p>#{hashtags[1]}</p>
           </div>
-          <p className="mark"> <b>Mark as Read</b></p>
+          <p onClick={()=>markAsRead(reading_time)} className="mark"> <b>Mark as Read</b></p>
     </div>
   );
 };
